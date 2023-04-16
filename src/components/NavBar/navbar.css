@@ -1,7 +1,8 @@
 .header{
     width: 100%;
     height: 50px;
-    background-color: rgba(255, 0, 0, 0.726);
+    background-color: rgb(0, 0, 0);
+    color: white;
 }
 h5{
     padding-top: 10px;
@@ -10,7 +11,7 @@ h5{
 .contenedor{
     width: 100%;
     height: 2rem;
-    background-color: rgba(255, 0, 0, 0.596); 
+    background-color: rgba(0, 0, 0, 0.397); 
     display: flex;
     justify-content: space-between;
 }
@@ -24,9 +25,8 @@ h5{
 }
 
 .carrito{
-    background-color: coral;
     width: 20%;
-    padding-top: 3px;
+    padding-top: 1px;
     display: flex;
     justify-content: flex-end;
     padding-right: 2rem;
