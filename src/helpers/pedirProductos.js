@@ -6,6 +6,6 @@ export const pedirProductos = () => {
       setTimeout(() =>{
         resolve(stock)
         reject("Rechazado")
-      }, 500)
+      }, 2000)
     })
   }

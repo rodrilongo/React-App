@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import {ImSpinner7} from 'react-icons/im'
 import { pedirProductos } from "../../helpers/pedirProductos"
 import { ItemList } from '../ItemList/ItemList';
 import "./itenlistcontainer.css"
@@ -27,7 +28,7 @@ export const ItemListContainer = ({greating}) => {
     <>
     {
       loading
-      ?<h2>Cargando...</h2>
+      ?<div className='spinner'><ImSpinner7/></div>
       :<ItemList productos={items}/>
     }
     </>
