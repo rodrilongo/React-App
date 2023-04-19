@@ -21,7 +21,7 @@ export const NavBar = () => {
           <Link to="/">Inicio</Link>
           <Link to='/productos/Hogar'>Hogar</Link>
           <Link to='/productos/Ropa'>Ropa</Link>
-          <Link to="/counter">Contador</Link>
+          {/* <Link to="/counter">Contador</Link> */}
 
         </div>
 
