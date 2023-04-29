@@ -12,38 +12,15 @@ import{
   Route
 } from 'react-router-dom'
 import { CartContext } from './components/context/CartContext';
-import { useState } from 'react';
+// import { useState } from 'react';
+import { CartProvider } from './components/context/CartContext';
 
 
 function App() {
   
-   const [carrito, setCarrito] = useState([])
-
-   console.log(carrito)
-
-   const addToCart = (item) =>{
-    setCarrito([...carrito, item])
-   }
-
-   const calcularCantidad = () =>{
-    return carrito.reduce((acc, prod) => acc + prod.counter, 0)
-   }
-
-   const precioTotal =() => {
-    return carrito.reduce((acc, prod) => acc + prod.price * prod.counter, 0)
-   }
-
-   const removerItem = (itemId) => {
-    const newCart = carrito.filter((prod) => prod.id !== itemId)
-    setCarrito(newCart)
-   }  
-
+  
   return (
-    <CartContext.Provider value={{addToCart,
-    calcularCantidad, precioTotal,
-    removerItem,
-    carrito
-    }}>
+    <CartProvider>
       
         <div className='App'>
 
@@ -59,7 +36,7 @@ function App() {
           </Router>
 
         </div>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }
 
