@@ -29,9 +29,20 @@ function App() {
     return carrito.reduce((acc, prod) => acc + prod.counter, 0)
    }
 
+   const precioTotal =() => {
+    return carrito.reduce((acc, prod) => acc + prod.price * prod.counter, 0)
+   }
+
+   const removerItem = (itemId) => {
+    const newCart = carrito.filter((prod) => prod.id !== itemId)
+    setCarrito(newCart)
+   }  
+
   return (
     <CartContext.Provider value={{addToCart,
-    calcularCantidad
+    calcularCantidad, precioTotal,
+    removerItem,
+    carrito
     }}>
       
         <div className='App'>
