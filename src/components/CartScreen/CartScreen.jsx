@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import {Button} from 'react-bootstrap'
 import {BsFillTrashFill} from 'react-icons/bs'
 import { CartContext } from '../context/CartContext'
+import { Link } from 'react-router-dom'
 
 
 export const CartScreen = () => {
@@ -10,7 +11,15 @@ export const CartScreen = () => {
 
   return (
     <div className='container'>
-    <h3>Resumen del carrito</h3>
+
+    {
+      carrito.length === 0
+      ?<>
+      <h4>Carrito Vacio</h4>
+      <Link to='/' className=' btn btn-info'>Volver a comprar</Link>
+      </>
+      :<>
+      <h3>Resumen del carrito</h3>
     {
       carrito.map((prod) => (
         <>
@@ -30,6 +39,10 @@ export const CartScreen = () => {
     <hr />
     <strong>Precio Total: ${precioTotal()}</strong>
     <Button className='btn btn-danger' onClick={vaciarCarrito}>Vaciar Carrito</Button>
+      </>
+    }
+
+    
     </div>
 
   )
