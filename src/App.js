@@ -11,9 +11,9 @@ import{
   // Navigate,
   Route
 } from 'react-router-dom'
-import { CartContext } from './components/context/CartContext';
 // import { useState } from 'react';
 import { CartProvider } from './components/context/CartContext';
+import { Checkout } from './components/Checkout/Checkout';
 
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
               <Route path='/' element={<ItemListContainer/>}/>
               <Route path='/productos/:categoryId' element={<ItemListContainer/>}/>
               <Route path='/cart' element={<CartScreen/>}/>
+              <Route path='/checkout' element={<Checkout/>}/>
               <Route path='/detail/:itemId' element={<ItemDetailContainer/>}/>
               {/* <Route path='*' element={Navigate to='/'} /> */}
             </Routes>

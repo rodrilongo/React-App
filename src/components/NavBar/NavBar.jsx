@@ -8,7 +8,7 @@ export const NavBar = () => {
     <div>
 
       <div className='header'>
-      <h5>Nombre/Logo de empresa</h5>
+      <h5>TIPTAK</h5>
       </div>
       
       
@@ -18,15 +18,15 @@ export const NavBar = () => {
 
         <div className='links'>
          
-          <Link to="/">Inicio</Link>
-          <Link to='/productos/Hogar'>Hogar</Link>
-          <Link to='/productos/Ropa'>Ropa</Link>
+          <Link to="/" class ="text-decoration-none ; text-light" ><b>Inicio</b></Link>
+          <Link to='/productos/Hogar' class ="text-decoration-none ; text-light"> <b>Hogar</b></Link>
+          <Link to='/productos/Ropa' class ="text-decoration-none ; text-light"><b>Ropa</b></Link>
           {/* <Link to="/counter">Contador</Link> */}
 
         </div>
 
         <div className='carrito'>
-        <Link to="/cart"><CartWidget/></Link>
+        <Link to="/cart" class ="text-decoration-none ; text-light"><CartWidget/></Link>
         </div>
       
       </div>

@@ -3,6 +3,7 @@ import {pedirProductos} from '../../helpers/pedirProductos'
 import {ImSpinner7} from 'react-icons/im'
 import {ItemDetail} from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
+import "./ItemDetail.css"
 
 
 
@@ -33,7 +34,7 @@ export const ItemDetailContainer = () => {
     <section>
         {
             loading
-            ?<ImSpinner7/>
+            ?<div className='spinner'><ImSpinner7/></div>
             :<ItemDetail {...item}/>
         }
 

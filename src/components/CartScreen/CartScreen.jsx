@@ -20,7 +20,7 @@ export const CartScreen = () => {
       </>
       :<>
       <h3>Resumen del carrito</h3>
-    {
+     {
       carrito.map((prod) => (
         <>
         <div className='listado'>
@@ -35,13 +35,14 @@ export const CartScreen = () => {
         </Button>
         </>
       ))
+     }
+     <hr />
+     <strong>Precio Total: ${precioTotal()}</strong>
+     <Button className='btn btn-danger' onClick={vaciarCarrito}>Vaciar Carrito</Button>
+     <Link className='btn btn-success' to= '/checkout'>Terminar compra</Link>
+     </>
     }
-    <hr />
-    <strong>Precio Total: ${precioTotal()}</strong>
-    <Button className='btn btn-danger' onClick={vaciarCarrito}>Vaciar Carrito</Button>
-      </>
-    }
-
+     
     
     </div>
 
