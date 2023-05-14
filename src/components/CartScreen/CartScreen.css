@@ -1,0 +1,9 @@
+.btn{
+    margin-top: 5px;
+    width: 300px;
+}
+.botones{
+    width: 300px;
+    display: flex;
+    flex-direction: column; 
+}

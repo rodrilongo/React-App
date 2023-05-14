@@ -21,7 +21,7 @@ export const Checkout = () => {
 
   return (
     <div>  
-       <h3> Terminar compra </h3> 
+       <h2> Terminar compra </h2> 
        <hr />
        
        <form onSubmit={handleSubmit} className='container mt-3'>

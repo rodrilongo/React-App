@@ -3,6 +3,7 @@ import {Button} from 'react-bootstrap'
 import {BsFillTrashFill} from 'react-icons/bs'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
+import "./CartScreen.css"
 
 
 export const CartScreen = () => {
@@ -38,8 +39,10 @@ export const CartScreen = () => {
      }
      <hr />
      <strong>Precio Total: ${precioTotal()}</strong>
+     <div className='botones'>
      <Button className='btn btn-danger' onClick={vaciarCarrito}>Vaciar Carrito</Button>
      <Link className='btn btn-success' to= '/checkout'>Terminar compra</Link>
+     </div>
      </>
     }
      
