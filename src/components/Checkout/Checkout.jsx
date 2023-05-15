@@ -39,8 +39,11 @@ export const Checkout = () => {
             <input type="text" className="form-control" onChange={(e) => setTelefono(e.target.value)} value={telefono}/>
         </div>
 
+
+        <div className='botones'>
         <button type='submit' className='btn btn-success'>Finalizar</button>
         <Link to='/cart' className='btn btn-info'>Volver al carrito</Link>
+        </div>
 
         
        </form>
