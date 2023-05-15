@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 
 
 
-export const ItemDetail = ({id, description, price, Image, category, stock}) => {
+export const ItemDetail = ({ description, price, image, category, stock}) => {
 
   const navigate = useNavigate()
 
@@ -23,9 +23,9 @@ export const ItemDetail = ({id, description, price, Image, category, stock}) => 
 
   const sumarAlCarrito = () =>{
     const newItem = {
-      id,
+
       description,
-      Image,
+      image,
       price,
       category,
       counter
@@ -39,13 +39,12 @@ export const ItemDetail = ({id, description, price, Image, category, stock}) => 
   return (
     <div className='itemDetail'>
       <Card style={{ width: '19rem' }}>
-       <Card.Img variant="top" src={Image}/>
+       <Card.Img variant="top" src={image}/>
         <Card.Body>
-         <Card.Title>{id}</Card.Title>
          <Card.Title>{description}</Card.Title>
-         <Card.Title>{price}</Card.Title>
+         <Card.Title>${price}</Card.Title>
          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur nobis cumque a, dolores, aliquid, culpa labore sunt unde repellat sit vero! Totam beatae eligendi vel quibusdam ad unde sequi saepe.</p>
-         <Card.Title>Categoria: {category}</Card.Title>
+         <Card.Title>Cantidad</Card.Title>
          <Button onClick={sumarAlCarrito} className='boton' variant="success">Agregar al carrito</Button> 
          <ItemCount max={stock} modify={setCounter} cantidad={counter}/>
        </Card.Body>

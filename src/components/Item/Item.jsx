@@ -4,14 +4,14 @@ import {Card, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 
-export const Item = ({id, description, price, Image, category}) => {
+export const Item = ({id, name, description, price, image, category}) => {
   return (
     <div className='item'>
       <Card style={{ width: '17rem' }}>
-       <Card.Img variant="top" src={Image}/>
+       <Card.Img variant="top" src={image}/>
         <Card.Body>
-         <Card.Title>{id}</Card.Title>
-         <Card.Title>{description}</Card.Title>
+         <Card.Title>{name}</Card.Title>
+         <Card.Title>Descripción: {description}</Card.Title>
          <Card.Title>{price}</Card.Title>
          <Card.Title>Categoria: {category}</Card.Title>
          <Link to={`/detail/${id}`}>
