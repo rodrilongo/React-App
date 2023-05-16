@@ -2,9 +2,9 @@ import React, { useState, useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
 import Swal from 'sweetalert2'
-import { getFirestore } from '../../firebase/config'
-import firebase from "firebase"
-import 'firebase/firestore'
+import { db} from '../../firebase/config'
+import { addDoc, collection,  serverTimestamp} from 'firebase/firestore'
+
 
 export const Checkout = () => {
 
@@ -37,17 +37,14 @@ export const Checkout = () => {
       },
       item: carrito,
       total_price: precioTotal(),
-      data: firebase.firestore.Timestamp.fromDate(new Date())
+      data: serverTimestamp()
     }
 
     // Hacemos funcion para enviar la orden a firebase
-    const db = getFirestore()
-
-    const ordenes = db.collection('ordenes')
-
-
+   
+    const ventas = collection(db,"orders")
+    addDoc(ventas,orden)
     // Cuando usamos add lo que hacemos, sumamos una nueva orden a la colección antes creada 
-    ordenes.add(orden)
       .then((res) => {
         Swal.fire({
           icon: 'success',
@@ -58,31 +55,20 @@ export const Checkout = () => {
           }
         })
       })
-      .finally(() => {
-        console.log('Operacion realizada con exito')
-      })
+      .catch((error)=> console.log(error))
 
     // Actualizamos la cantidad en la base de datos
 
     // Con forEach re corremos toda la colección de la base de datos
 
-    carrito.forEach((item) => {
-      const docRef = db.collection('productos').doc(item.id)
-
-      docRef.get()
-        .then((doc) => {
-          docRef.update({
-            stock: doc.data().stock - item.counter
-          })
-        })
-    })
+    
   }
 
 
   return (
     <div>
 
-      <h3>Terminar compra</h3>
+      <h2>Terminar compra</h2>
       <hr />
 
       <form onSubmit={handleSubmit} className='container mt-3'>
